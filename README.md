@@ -30,7 +30,7 @@ to differentiate the COVID-19 images from other pneumonia.
 ![alt text](Dataset.png)
 
 
-###Materials for storing data and coding can be listed as:
+###### Materials for storing data and coding can be listed as:
 
 As a dataset, COVID19, Pneumonia and Normal Chest X-ray PA Dataset by the Khulna University of Engineering and Technology has been utilized. Download and store it in the Google Drive.
  For model building, testing and evaluation (coding), the Google Colab environment has been used. The libraries; Tensorflow, Numpy, Pandas, Matplotlib, Seaborn, Keras Image Data Generator, Keras Callbacks Model Check Point, Keras Applications Densenet121, OpenCV. 
@@ -59,13 +59,13 @@ The intuition behind transfer learning for image classification is that if a mod
 serve as a generic model of the visual world. You can then take advantage of these learned feature maps without having to start from scratch by training a 
 large model on a large dataset.
 
-###Feature Extraction: 
+### Feature Extraction: 
 Use the representations learned by a previous network to extract meaningful features from new samples. You simply add a new classifier, 
 which will be trained from scratch, on top of the pretrained model so that you can repurpose the feature maps learned previously for the dataset. 
 In this step, you will freeze the convolutional base created from the previous step and to use as a feature extractor. Additionally, you add a classifier on 
 top of it and train the top-level classifier. You do not need to (re)train the entire model. 
 
-###Fine-Tuning: 
+### Fine-Tuning: 
 Unfreeze a few of the top layers of a frozen model base and jointly train both the newly-added classifier layers and the last layers of the base 
 model. This allows us to "fine-tune" the higher-order feature representations in the base model in order to make them more relevant for the specific task. 
 In the feature extraction experiment, you were only training a few layers on top of a base model. The weights of the pre-trained network were not updated during 
@@ -86,7 +86,7 @@ The composition of our model therefore structured as loading the pre-trained bas
 layers on top. In order to adjust a decision mechanism we also add a dense layer which consist of three nodes at the very end of the pre-trained network with the 
 softmax activation function. Since we utilized the softmax activation function at the final dense layer, it is possible to get logits, and produce the probabilities belong to each class during the decision mechanism of our model. 
 
-##RESULTS
+## RESULTS
 
 Adam optimizer and the Sparse Categorical Cross Entropy as loss function have been used to compile the model. Fature Extraction after 4 epochs, the model achieved 
 77.23% test accuracy. Then additional 4 epochs has been applied to train the model after fine- tuning approach adjustments, the model validation accuracy reached 
