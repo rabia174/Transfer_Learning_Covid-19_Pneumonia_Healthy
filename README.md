@@ -98,10 +98,12 @@ So, we should have a look at other metrics such as precision, recall and f1-scor
 I took a sub-patch from the test dataset and computed these values on it. According to the Confusion Matrix the model is good at detecting COVID- 19 cases and Pneumonia but on the other hand detecting or differentiating normal cases from other classes is harder according to this confusion matrix. 
 So, you can see here the table which consist of Precision, Recall and F1-Score values. The model has difficulties identifying the actual healthy images, the proportion of correctly identified actual healthy chest x-rays (Recall) is smaller when compared to others.
 Also, with the method that I wrote single super test method which you can see on my  code book. This method can take a path to any image and produces probabilities for each class belong to it.
-Finally, the Grad-CAM technique has been used to visualize the regions of input that are ”essential” for predictions from these models or visual explanations using COVID-19 and Pneumonia chest X-ray. 
 
 
 ![alt text](confusion.png)
 
 ![alt text](table.png)
 
+Finally, the Grad-CAM technique has been used to visualize the regions of input that are ”essential” for predictions from these models or visual explanations using COVID-19 and Pneumonia chest X-ray. 
+
+![alt text](gradcamresults.png)
